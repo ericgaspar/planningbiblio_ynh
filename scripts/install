@@ -121,6 +121,7 @@ chown $app:$app "$final_path/.env.local"
 #=================================================
 ynh_script_progression --message="Installing $app with Composer..." --weight=5
 
+ynh_secure_remove --file="$final_path/composer.lock"
 ynh_install_composer #--install_args="--ignore-platform-reqs"
 
 #=================================================
