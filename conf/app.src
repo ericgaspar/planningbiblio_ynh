@@ -1,5 +1,5 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://github.com/PlanningBiblio/PlanningBiblio/archive/refs/tags/v21.04.02.tar.gz
+SOURCE_SUM=0c6e004c1c25db75ffba8d3ea69fac8c1550358ff23dcac39c14ad8639048813
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
