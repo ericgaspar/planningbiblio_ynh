@@ -25,7 +25,7 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 #=================================================
 # REMOVE LOGROTATE CONFIGURATION
 #=================================================
-ynh_script_progression --message="Removing logrotate configuration..." --time --weight=1
+ynh_script_progression --message="Removing logrotate configuration..." --weight=1
 
 # Remove the app-specific logrotate config
 ynh_remove_logrotate
@@ -33,10 +33,18 @@ ynh_remove_logrotate
 #=================================================
 # REMOVE THE MYSQL DATABASE
 #=================================================
-ynh_script_progression --message="Removing the MySQL database..." --time --weight=1
+ynh_script_progression --message="Removing the MySQL database..." --weight=1
 
 # Remove a database if it exists, along with the associated user
 ynh_mysql_remove_db --db_user=$db_user --db_name=$db_name
+
+#=================================================
+# REMOVE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Removing dependencies..." --weight=1
+
+# Remove metapackage and its dependencies
+ynh_remove_app_dependencies
 
 #=================================================
 # REMOVE APP MAIN DIR

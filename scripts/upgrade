@@ -80,7 +80,7 @@ ynh_add_nginx_config
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --time --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --package="$extra_php_dependencies"
+ynh_add_fpm_config
 
 #=================================================
 # UPDATE A CONFIG FILE
